@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
-    <title>Férias em alcanena</title>
+    <title>Inscrições</title>
     <link href="static/css/styles.css" rel="stylesheet" />
-    <link href="static/css/páginaInicial.css" rel="stylesheet" />
+    <link href="static/css/inscricoes.css" rel="stylesheet" />
     <script src="static/js/script.js" async></script>
   </head>
   <body>
@@ -66,38 +66,20 @@
         </a>
       </div>
       <div class="content">
-        <article class="página-inicial">
-          <div class="página-inicial-header">
-            <img src="static/media/ferias_ativas_teste.svg" alt="Férias Ativas Verão 2021" />
-            <img src="static/media/scrolldown.svg" alt="" id="scrolldown-icon" />
-          </div>
-          <p>Aproveite as férias de verão da melhor maneira, com desporto, atividades de orientação, Workshops, ...</p>
-          <p>Apressa-te que a animação não vai faltar.</p>
-          <p>
-            Se tens entre 6 e 12 anos, não podes deixar de estar presente, inscreve-te aqui a partir de 15 de junho de 2020.
-            Consulta o regulamento, conhece as atividades, ...e diverte-te muito...
-          </p>
-
-          <div class="button-box">
-            <a href="inscricoes.html" class="a-button">Inscreve-te</a>
-            <a href="atividades.html" class="a-button">Atividades</a>
-            <a href="regulamento.html" class="a-button">Projeto</a>
-            <a href="regulamento.html" class="a-button">Regulamento</a>
-          </div>
+        <article class="inscricoes">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScU7N6clb0iF7MuDf5YwDScyty83OeOuRjPLsolk8fJg-iOjA/viewform?embedded=true"
+            frameborder="0"
+            >A carregar …</iframe
+          >
         </article>
+        <div class="button-box">
+          <a href="inscricoes.html" class="a-button">Inscreve-te</a>
+          <a href="atividades.html" class="a-button">Atividades</a>
+          <a href="regulamento.html" class="a-button">Projeto</a>
+          <a href="regulamento.html" class="a-button">Regulamento</a>
+        </div>
       </div>
     </div>
-    <script async type="text/javascript">
-      // Isto obriga a reiniciar a animação ao refrescar a página
-      const scrolldownIcon = document.getElementById('scrolldown-icon');
-      scrolldownIcon.addEventListener('load', () => {
-        scrolldownIcon.style.animation = '';
-        setTimeout(() => {
-          scrolldownIcon.style.animation = 'scrolldown';
-          scrolldownIcon.style.animationIterationCount = 'infinite';
-          scrolldownIcon.style.animationDuration = '3s';
-        }, 100);
-      });
-    </script>
   </body>
 </html>
