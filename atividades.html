@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
-    <title>Inscrições</title>
+    <title>Férias Ativas - Inscrições</title>
     <link href="static/css/styles.css" rel="stylesheet" />
     <link href="static/css/atividades.css" rel="stylesheet" />
     <script src="static/js/script.js" async></script>
+    <script src="static/js/atividades.js" async></script>
   </head>
   <body>
     <nav>
@@ -68,6 +69,94 @@
       <div class="content">
         <article class="atividades">
           <h1>Cronograma de atividades Férias Ativas Verão 2021</h1>
+          <h3>Plano transversal a 4 semanas de atividades:</h3>
+          <ul>
+            <li><strong>1ª semana:</strong> 6 a 10 de julho</li>
+            <li><strong>2ª semana:</strong> 13 a 17 de julho</li>
+            <li><strong>3ª semana:</strong> 20 a 24 de julho</li>
+            <li><strong>4ª semana:</strong> 27 a 31 de julho</li>
+          </ul>
+          <div class="atividades-menu">
+            <h1>Horário:</h1>
+            <ul>
+              <li id="2f">Segunda-feira</li>
+              <li id="3f">Terça-feira</li>
+              <li id="4f">Quarta-feira</li>
+              <li id="5f">Quinta-feira</li>
+              <li id="6f">Sexta-feira</li>
+            </ul>
+          </div>
+          <section class="cronograma" id="cronograma">
+            <table>
+              <tr>
+                <th>Horas</th>
+                <th>Programa</th>
+              </tr>
+              <!-- Aqui ficam as atividades de segunda feira, o conteúdo dos restantes dias deve ser adicionado ao ficheiro static/js/atividades.js -->
+              <!-- Podem ser alteradas as horas caso sejam iguais todos os dias, caso não sejam devem ser manipuladas através do javascript -->
+              <tr>
+                <td>9:00</td>
+                <td id="td1">
+                  Concentração dos participantes no Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena.
+                </td>
+              </tr>
+              <tr>
+                <td>10:00</td>
+                <td id="td2">
+                  Ínicio das atividades:
+                  <ul class="cronograma-atividades">
+                    <li>Exercício Físico (Aeróbica, circuitos de força, entre outras)</li>
+                    <li>Zona Desportiva de Alcanena</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>11:30</td>
+                <td id="td3">Encerramento das atividades</td>
+              </tr>
+              <tr>
+                <td>11:45</td>
+                <td id="td4">Partida para a Escola Secundária de Alcanena</td>
+              </tr>
+              <tr>
+                <td>12:00</td>
+                <td id="td5">Refeitório da Escola Secundária de Alcanena</td>
+              </tr>
+              <tr>
+                <td>13:45</td>
+                <td id="td6">
+                  Regresso ao Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena (exceção à 3f em que os grupos
+                  seguem para a Biblioteca Municipal)
+                </td>
+              </tr>
+              <tr>
+                <td>14:00</td>
+                <td id="td7">
+                  Ínicio das atividades:
+                  <ul class="cronograma-atividades">
+                    <li>Exercício Físico (Aeróbica, circuitos de força, entre outras)</li>
+                    <li>Zona Desportiva de Alcanena</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>15:45</td>
+                <td id="td8">Encerramento das atividades</td>
+              </tr>
+              <tr>
+                <td>16:00</td>
+                <td id="td9">Lanche</td>
+              </tr>
+              <tr>
+                <td>16:30</td>
+                <td id="td10">Tempo livre</td>
+              </tr>
+              <tr>
+                <td>17:30</td>
+                <td id="td11">Regresso a casa</td>
+              </tr>
+            </table>
+          </section>
         </article>
         <div class="button-box">
           <a href="inscricoes.html" class="a-button">Inscreve-te</a>
