@@ -1,0 +1,175 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  --MenuBackground: #252525;
+  /* --MenuBackground: #122c44; */
+  --MenuItemsColor: #d0d5da;
+  --MenuHoverColor: #387142;
+  /* --MenuHoverColor: #2c4259; */
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+
+/* Barra de scroll */
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background: var(--MenuItemsColor);
+  transition: all 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #babbbc;
+}
+
+/* Menu de navegação */
+nav {
+  text-align: left;
+  height: 100%;
+  position: relative;
+  top: 0;
+  width: 0;
+  transition: 0.5s all;
+}
+#menu {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: var(--MenuBackground);
+  overflow: auto;
+  /* Menu fechado ao iniciar */
+}
+#menu li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 1rem;
+  transition: 0.3s all;
+}
+#menu a {
+  text-decoration: none;
+}
+#menu li p {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--MenuItemsColor);
+  margin: 0;
+  transform: translateY(5%);
+}
+/* Icones do menu */
+#menu li img {
+  width: 1.5rem;
+  fill: var(--MenuItemsColor);
+  margin-right: 0.5rem;
+}
+#menu li:hover {
+  background-color: var(--MenuHoverColor);
+}
+#menu-icon {
+  cursor: pointer;
+  width: 3rem;
+  padding-left: 0.5rem;
+  transition: all 0.4s;
+}
+#close-icon {
+  width: 2.2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+/* Main */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.logo {
+  width: 20rem;
+  margin-right: 0.5rem;
+  transition: all 0.3s;
+}
+.logo:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: scale(1.02);
+}
+.main {
+  position: relative;
+  transition: margin-left 0.5s;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.content {
+  height: 90%; /* para não ser cortado pelo overflow hidden */
+  overflow: auto;
+}
+
+/* Botões */
+.button-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+  margin: 2rem 0 4rem 0;
+  text-align: center;
+}
+.a-button {
+  display: block;
+  margin: 1rem;
+  min-width: 8rem;
+  padding: 0.8rem 0.9rem 0.8rem 0.9rem;
+  background-color: #fafafa;
+  color: #000;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.a-button:hover {
+  background-color: #ffa610;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* Páginas de texto */
+.página-de-texto {
+  text-align: left;
+  width: 70%;
+  margin-left: 10%;
+}
+
+.página-de-texto li {
+  margin: 2.5rem 0 2.5rem 0;
+}
+.página-de-texto table {
+  margin: 2rem 0 2rem 0;
+  border-collapse: collapse;
+}
+.página-de-texto td,
+.página-de-texto th {
+  border-collapse: collapse;
+  border: 1px solid #b0b0b0;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 410px) {
+  .navbar img {
+    width: 15rem;
+  }
+  .página-de-texto ol {
+    width: 100%;
+    padding: 1rem;
+  }
+}
