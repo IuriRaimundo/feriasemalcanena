@@ -143,6 +143,26 @@ nav {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+/* Logotipos dos patrocinadores */
+.sponsors {
+  display: grid;
+  grid-template-columns: 33%;
+  grid-auto-flow: column;
+  justify-items: center;
+  margin: 1rem auto;
+}
+
+.sponsor-icon {
+  padding: 1rem;
+  width: 8rem;
+  transition: box-shadow 0.2s;
+}
+
+.sponsor-icon:hover {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 /* Páginas de texto */
 .página-de-texto {
   text-align: left;
@@ -156,6 +176,7 @@ nav {
 .página-de-texto table {
   margin: 2rem 0 2rem 0;
   border-collapse: collapse;
+  empty-cells: hide;
 }
 .página-de-texto td,
 .página-de-texto th {

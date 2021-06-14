@@ -1,13 +1,18 @@
 const container = document.getElementById('cronograma');
-let selected = document.getElementById('2f'); // Seleção inicial
+const container2 = document.getElementById('cronograma-2');
+let selected = document.getElementById('3f'); // Seleção inicial
 selected.className = 'atividades-menu-destacado'; // Destacar inicial
 
 const buttons = [
-  document.getElementById('2f'),
   document.getElementById('3f'),
   document.getElementById('4f'),
   document.getElementById('5f'),
   document.getElementById('6f'),
+  document.getElementById('2f-2'),
+  document.getElementById('3f-2'),
+  document.getElementById('4f-2'),
+  document.getElementById('5f-2'),
+  document.getElementById('6f-2'),
 ];
 
 buttons.forEach((element) => {
@@ -15,166 +20,184 @@ buttons.forEach((element) => {
     selected.className = '';
     selected = e.target;
     selected.className = 'atividades-menu-destacado';
-    renderContent();
-    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!selected.id.includes('-2')) {
+      // Renderizar conteúdo
+      tdManhã.innerHTML = content[selected.id].tdManhã;
+      tdTarde.innerHTML = content[selected.id].tdTarde;
+      container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      tdManhã2.innerHTML = content[selected.id].tdManhã;
+      tdTarde2.innerHTML = content[selected.id].tdTarde;
+      container2.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   });
 });
 
-const td1 = document.getElementById('td1');
-const td2 = document.getElementById('td2');
-const td3 = document.getElementById('td3');
-const td4 = document.getElementById('td4');
-const td5 = document.getElementById('td5');
-const td6 = document.getElementById('td6');
-const td7 = document.getElementById('td7');
-const td8 = document.getElementById('td8');
-const td9 = document.getElementById('td9');
-const td10 = document.getElementById('td10');
-const td11 = document.getElementById('td11');
+// Campos do cronograma 1
 
-const tds = [td1, td2, td3, td4, td5, td6, td7, td8, td9, td10, td11];
+const tdManhã = document.getElementById('td-manhã');
+const tdTarde = document.getElementById('td-tarde');
 
-class ContentUl {
-  constructor(title, listItems) {
-    this.title = title;
-    this.listItems = listItems;
+const tds = [tdManhã, tdTarde];
 
-    const div = document.createElement('div');
-    div.appendChild(document.createTextNode(title));
-    const ul = document.createElement('ul');
-    ul.className = 'cronograma-atividades';
+// Campos do cronograma 2
 
-    const liArray = Array.from(
-      listItems.map((item) => {
-        const li = document.createElement('li');
-        li.appendChild(document.createTextNode(item));
-        return li;
-      })
-    );
+const tdManhã2 = document.getElementById('td-manhã2');
+const tdTarde2 = document.getElementById('td-tarde2');
 
-    liArray.forEach((li) => {
-      ul.appendChild(li);
-    });
+const tds2 = [tdManhã2, tdTarde2];
 
-    div.appendChild(ul);
-
-    return div;
-  }
-}
-
-// Conteúdo para cada dia
-// 2f, 3f, 4f, etc... representam os dias da semana
-// document.createTextNode(texto) para aidcionar texto
-// new ContentUl(titulo lista, array com os itens da lista)
+// Conteúdo
 const content = {
-  '2f': {
-    td1: document.createTextNode(
-      'Concentração dos participantes no Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena.'
-    ),
-    td2: new ContentUl('Ínicio das atividades:', [
-      'Exercício Físico (Aeróbica, circuitos de força, entre outras)',
-      'Zona Desportiva de Alcanena',
-    ]),
-    td3: document.createTextNode('Encerramento das atividades'),
-    td4: document.createTextNode('Partida para a Escola Secundária de Alcanena'),
-    td5: document.createTextNode('Refeitório da Escola Secundária de Alcanena'),
-    td6: document.createTextNode(
-      'Regresso ao Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena (exceção à 3f em que os grupos seguem para a Biblioteca Municipal)'
-    ),
-    td7: new ContentUl('Ínicio das atividades:', ['Caça ao tesouro', 'Zona Desportiva de Alcanena', 'Zona Urbana de Alcanena']),
-    td8: document.createTextNode('Encerramento das atividades'),
-    td9: document.createTextNode('Lanche'),
-    td10: document.createTextNode('Tempo livre'),
-    td11: document.createTextNode('Regresso a casa'),
-  },
   '3f': {
-    td1: document.createTextNode(
-      'Concentração dos participantes no Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena.'
-    ),
-    td2: new ContentUl('Ínicio das atividades:', ['Atletismo', 'Pista de Atletismo Manuel da Peidade Costa']),
-    td3: document.createTextNode('Encerramento das atividades'),
-    td4: document.createTextNode('Partida para a Escola Secundária de Alcanena'),
-    td5: document.createTextNode('Refeitório da Escola Secundária de Alcanena'),
-    td6: document.createTextNode(
-      'Regresso ao Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena (exceção à 3f em que os grupos seguem para a Biblioteca Municipal)'
-    ),
-    td7: new ContentUl('Ínicio das atividades:', [
-      'Atividades a designar',
-      'Colaboração B.M.A.',
-      'Jardim da Biblioteca Municipal',
-    ]),
-    td8: document.createTextNode('Encerramento das atividades'),
-    td9: document.createTextNode('Lanche'),
-    td10: document.createTextNode('Tempo livre'),
-    td11: document.createTextNode('Regresso a casa'),
+    tdManhã: `
+      <p>9h: concentração na Zona Desportiva de Alcanena</p>
+      Atividades:
+      <ul class="cronograma-atividades">
+        <li>Dinâmicas de grupo</li>
+      </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Hora do conto invertida</li>
+    </ul>
+    <p>17h30: Despedida / entrega aos pais (Biblioteca Municipal)</p>
+    `,
   },
   '4f': {
-    td1: document.createTextNode(
-      'Concentração dos participantes no Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena.'
-    ),
-    td2: new ContentUl('Ínicio das atividades:', ['Jogos recreativos individuais', 'Zona Desportiva de Alcanena']),
-    td3: document.createTextNode('Encerramento das atividades'),
-    td4: document.createTextNode('Partida para a Escola Secundária de Alcanena'),
-    td5: document.createTextNode('Refeitório da Escola Secundária de Alcanena'),
-    td6: document.createTextNode(
-      'Regresso ao Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena (exceção à 3f em que os grupos seguem para a Biblioteca Municipal)'
-    ),
-    td7: new ContentUl('Ínicio das atividades:', ['Pedi paper', 'Zona Desportiva de Alcanena', 'Zona Urbana de Alcanena']),
-    td8: document.createTextNode('Encerramento das atividades'),
-    td9: document.createTextNode('Lanche'),
-    td10: document.createTextNode('Tempo livre'),
-    td11: document.createTextNode('Regresso a casa'),
+    tdManhã: `
+    <p>9h: concentração no Cine-Teatro São Pedro</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Ser ator por um dia</li>
+    </ul>
+  `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Ser ator por um dia</li>
+      <li>Piscinas municipais de Alcanena</li>
+    </ul>
+    <p>17h30: Despedida / entrega aos pais (Piscina Municipal)</p>
+    `,
   },
   '5f': {
-    td1: document.createTextNode(
-      'Concentração dos participantes no Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena.'
-    ),
-    td2: new ContentUl('Ínicio das atividades:', ['Ténis', 'Campo de Ténis de Alcanena']),
-    td3: document.createTextNode('Encerramento das atividades'),
-    td4: document.createTextNode('Partida para a Escola Secundária de Alcanena'),
-    td5: document.createTextNode('Refeitório da Escola Secundária de Alcanena'),
-    td6: document.createTextNode(
-      'Regresso ao Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena (exceção à 3f em que os grupos seguem para a Biblioteca Municipal)'
-    ),
-    td7: new ContentUl('Ínicio das atividades:', [
-      'Jogo do Sábio',
-      'Cultura geral',
-      'Zona Desportiva de Alcanena',
-      'Zona Urbana de Alcanena',
-    ]),
-    td8: document.createTextNode('Encerramento das atividades'),
-    td9: document.createTextNode('Lanche'),
-    td10: document.createTextNode('Tempo livre'),
-    td11: document.createTextNode('Regresso a casa'),
+    tdManhã: `
+    <p>9h: concentração na Zona Desportiva de Alcanena</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Canoagem</li>
+      <li>Padel</li>
+      <li>Banhos</li>
+    </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Mindfulness na natureza</li>
+    </ul>
+    <p>17h30: chegada à Zona Desportiva de Alcanena / despedida / entrega aos pais</p>
+    `,
   },
   '6f': {
-    td1: document.createTextNode(
-      'Concentração dos participantes no Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena.'
-    ),
-    td2: new ContentUl('Ínicio das atividades:', [
-      'Expressão Motora',
-      'Circuito de deslocamentos e equílibrios, entre outras',
-      'Zona Desportiva de Alcanena',
-    ]),
-    td3: document.createTextNode('Encerramento das atividades'),
-    td4: document.createTextNode('Partida para a Escola Secundária de Alcanena'),
-    td5: document.createTextNode('Refeitório da Escola Secundária de Alcanena'),
-    td6: document.createTextNode(
-      'Regresso ao Jardim da República (Jardim do Planeta) / Zona Desportiva de Alcanena (exceção à 3f em que os grupos seguem para a Biblioteca Municipal)'
-    ),
-    td7: new ContentUl('Ínicio das atividades:', ['Orientação Urbana', 'Zona Desportiva de Alcanena', 'Zona Urbana de Alcanena']),
-    td8: document.createTextNode('Encerramento das atividades'),
-    td9: document.createTextNode('Lanche'),
-    td10: document.createTextNode('Tempo livre'),
-    td11: document.createTextNode('Regresso a casa'),
+    tdManhã: `
+    <p>9h: concentração na Zona Desportiva de Alcanena</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Dia na praia</li>
+    </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Dia na praia</li>
+    </ul>
+    <p>17h30: chegada à Zona Desportiva de Alcanena / despedida / entrega aos pais</p>
+    `,
+  },
+  '2f-2': {
+    tdManhã: `
+    <p>9h: concentração na Zona Desportiva de Alcanena</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Dinâmicas de grupo</li>
+    </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Cinema</li>
+      <li>Piscinas Municipais de Alcanena</li>
+    </ul>
+    <p>17:30 despedida / entrega aos pais (Piscina Municipal)</p>
+    `,
+  },
+  '3f-2': {
+    tdManhã: `
+    <p>9h: concentração na Zona Desportiva de Alcanena</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Manhã Desportiva</li>
+    </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Hora do conto invertida</li>
+    </ul>
+    <p>17:30 despedida / entrega aos pais (Biblioteca Municipal)</p>
+    `,
+  },
+  '4f-2': {
+    tdManhã: `
+    <p>9h: concentração na Zona Desportiva de Alcanena</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Party games</li>
+    </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Ser ator por um dia</li>
+    </ul>
+    <p>17:30 despedida / entrega aos pais (CTSP)</p>
+    
+    `,
+  },
+  '5f-2': {
+    tdManhã: `
+    <p>9h: concentração na Zona Desportiva de Alcanena</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Canoagem</li>
+      <li>Padel</li>
+      <li>Banhos</li>
+    </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Mindfulness na natureza</li>
+    </ul>
+    <p>17h30: chegada à Zona Desportiva de Alcanena / despedida / entrega aos pais</p>
+    `,
+  },
+  '6f-2': {
+    tdManhã: `
+    <p>9h: concentração na Zona Desportiva de Alcanena</p>
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Dia na praia</li>
+    </ul>
+    `,
+    tdTarde: `
+    Atividades:
+    <ul class="cronograma-atividades">
+      <li>Dia na praia</li>
+    </ul>
+    <p>17h30: chegada à Zona Desportiva de Alcanena / despedida / entrega aos pais</p>
+    `,
   },
 };
-
-// Renderizar conteúdo
-
-function renderContent() {
-  const contentToRender = content[selected.id];
-  tds.forEach((td) => {
-    td.replaceChildren(contentToRender[td.id]);
-  });
-}

@@ -48,7 +48,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .página-inicial img {
+  .página-inicial > img {
     margin: 2rem 0 0 0;
     width: 90vw;
   }
