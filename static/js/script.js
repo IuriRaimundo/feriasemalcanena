@@ -27,6 +27,7 @@ const menu = {
   menuPáginaCartaz: document.getElementById('menu-cartaz'),
   highlightItem: (currentPage) => {
     const pageRefs = {
+      '/feriasemalcanena/': menu.menuPáginaInicial,
       '/feriasemalcanena/index.html': menu.menuPáginaInicial,
       '/feriasemalcanena/inscricoes.html': menu.menuPáginaInscrição,
       '/feriasemalcanena/normas_especificas.html': menu.menuPáginaNormasEspecíficas,
