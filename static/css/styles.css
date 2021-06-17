@@ -44,7 +44,6 @@ nav {
   list-style-type: none;
   background-color: var(--MenuBackground);
   overflow: auto;
-  /* Menu fechado ao iniciar */
 }
 #menu li {
   cursor: pointer;
@@ -112,7 +111,8 @@ nav {
 }
 .content {
   height: 90%; /* para não ser cortado pelo overflow hidden */
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Botões */
@@ -185,7 +185,7 @@ nav {
   padding: 1rem;
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 500px) {
   .navbar img {
     width: 15rem;
   }

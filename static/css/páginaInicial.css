@@ -12,12 +12,12 @@
   background-size: cover;
   background-position: right;
 }
-.página-inicial-header img {
+.header-logo {
   margin: 4rem 0 2rem 0;
   width: 30rem;
   pointer-events: none;
-  transform: translateY(10%);
 }
+
 @keyframes scrolldown {
   50% {
     transform: translateY(80%);
@@ -27,12 +27,12 @@
   }
 }
 #scrolldown-icon {
+  pointer-events: none;
   position: relative;
   width: 2rem;
   transform: translateY(60%);
   transition: all 0.3s ease-in-out;
   animation: scrolldown;
-
   animation-iteration-count: infinite;
   animation-duration: 3s;
 }
@@ -48,7 +48,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .página-inicial > img {
+  .header-logo {
     margin: 2rem 0 0 0;
     width: 90vw;
   }
@@ -58,18 +58,20 @@
   .página-inicial p {
     font-size: 1.2rem;
   }
-  #scrolldown-icon {
-    transform: translateY(180%);
-    animation: scrolldownMobile;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
-  }
   @keyframes scrolldownMobile {
     50% {
-      transform: translateY(210%);
+      transform: scale(1.1);
+      transform: translateY(220%);
     }
     100% {
       transform: translateY(180%);
     }
+  }
+  #scrolldown-icon {
+    transform: translateY(180%);
+    transition: all 0.3s ease-in-out;
+    animation: scrolldownMobile;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
   }
 }

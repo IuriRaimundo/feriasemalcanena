@@ -24,14 +24,16 @@ const menu = {
   menuPáginaRegulamento: document.getElementById('menu-regulamento'),
   menuPáginaProjeto: document.getElementById('menu-projeto'),
   menuPáginaAtividades: document.getElementById('menu-atividades'),
+  menuPáginaCartaz: document.getElementById('menu-cartaz'),
   highlightItem: (currentPage) => {
     const pageRefs = {
-      'index.html': menu.menuPáginaInicial,
-      'inscricoes.html': menu.menuPáginaInscrição,
-      'normas_especificas.html': menu.menuPáginaNormasEspecíficas,
-      'regulamento.html': menu.menuPáginaRegulamento,
-      'projeto.html': menu.menuPáginaProjeto,
-      'atividades.html': menu.menuPáginaAtividades,
+      '/index.html': menu.menuPáginaInicial,
+      '/inscricoes.html': menu.menuPáginaInscrição,
+      '/normas_especificas.html': menu.menuPáginaNormasEspecíficas,
+      '/regulamento.html': menu.menuPáginaRegulamento,
+      '/projeto.html': menu.menuPáginaProjeto,
+      '/atividades.html': menu.menuPáginaAtividades,
+      '/cartaz.html': menu.menuPáginaCartaz,
     };
     if (pageRefs[currentPage]) pageRefs[currentPage].style.backgroundColor = 'var(--MenuHoverColor)';
   },
@@ -40,5 +42,5 @@ const menu = {
 menu.openIcon.addEventListener('click', menu.open);
 menu.closeIcon.addEventListener('click', menu.close);
 // Destacar item do menu
-const currentPage = window.location.pathname.replace('/vanilla/', '');
+const currentPage = window.location.pathname;
 menu.highlightItem(currentPage);
