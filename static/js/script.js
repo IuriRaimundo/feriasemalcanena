@@ -27,13 +27,13 @@ const menu = {
   menuPáginaCartaz: document.getElementById('menu-cartaz'),
   highlightItem: (currentPage) => {
     const pageRefs = {
-      '/index.html': menu.menuPáginaInicial,
-      '/inscricoes.html': menu.menuPáginaInscrição,
-      '/normas_especificas.html': menu.menuPáginaNormasEspecíficas,
-      '/regulamento.html': menu.menuPáginaRegulamento,
-      '/projeto.html': menu.menuPáginaProjeto,
-      '/atividades.html': menu.menuPáginaAtividades,
-      '/cartaz.html': menu.menuPáginaCartaz,
+      '/feriasemalcanena/index.html': menu.menuPáginaInicial,
+      '/feriasemalcanena/inscricoes.html': menu.menuPáginaInscrição,
+      '/feriasemalcanena/normas_especificas.html': menu.menuPáginaNormasEspecíficas,
+      '/feriasemalcanena/regulamento.html': menu.menuPáginaRegulamento,
+      '/feriasemalcanena/projeto.html': menu.menuPáginaProjeto,
+      '/feriasemalcanena/atividades.html': menu.menuPáginaAtividades,
+      '/feriasemalcanena/cartaz.html': menu.menuPáginaCartaz,
     };
     if (pageRefs[currentPage]) pageRefs[currentPage].style.backgroundColor = 'var(--MenuHoverColor)';
   },
