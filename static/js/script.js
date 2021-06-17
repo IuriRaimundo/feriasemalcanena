@@ -36,7 +36,6 @@ const menu = {
       '/feriasemalcanena/atividades.html': menu.menuPáginaAtividades,
       '/feriasemalcanena/cartaz.html': menu.menuPáginaCartaz,
     };
-    console.log(pageRefs[currentPage]);
     if (pageRefs[currentPage]) pageRefs[currentPage].style.backgroundColor = 'var(--MenuHoverColor)';
   },
 };
